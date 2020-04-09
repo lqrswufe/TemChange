@@ -38,13 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });//匿名类监听
-
-
         };
-
-
-
-
     @Override
     public void onClick(View v) {
         Log.i("click","onClick....");//去获取用户输入，改变输出

@@ -14,18 +14,28 @@ public class SencondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sencond);//score是“请输入摄氏度”，textNAME是结果
-        findViewById(R.id.score);
-        score=findViewById(R.id.score);
-        textName=findViewById(R.id.textName);
+        setContentView(R.layout.activity_sencond);
+        score= (TextView) findViewById(R.id.score);
+
     }
-    public void btnAdd(View btn){
-        String inpNumber =score.getText().toString();
-        double  oldNumber=Double.parseDouble(inpNumber);
-        textName.setText("结果是："+showNumber(oldNumber));
+    public void btnAdd1(View btn){
+        showScore(1);
     }
-    private double showNumber(double a){
-        Log.i("btn","turn");
-        return (double) (a*1.8+32);
+    public void btnAdd2(View btn){
+        showScore(2);
+    }
+    public void btnAdd3(View btn){
+        showScore(3);
+    }
+    public void btnResert(View btn){
+        score.setText("0");
+
+    }
+    private void showScore(int inc){
+        Log.i("show","inc=" + inc);
+        String oldScore = (String) score.getText();
+        int newScore = Integer.parseInt(oldScore)+inc;
+        score.setText("" + newScore );
+
     }
 }
